@@ -1,4 +1,4 @@
-package com.nightowldevelopers.onetapxpboost;
+package com.nightowldevelopers.levelup;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.nightowldevelopers.onetapxpboost", appContext.getPackageName());
+        assertEquals("com.nightowldevelopers.levelup", appContext.getPackageName());
     }
 }

@@ -1,4 +1,4 @@
-package com.nightowldevelopers.onetapxpboost;
+package com.nightowldevelopers.levelup;
 
 import org.junit.Test;
 
