@@ -7,7 +7,6 @@ Save this file as res/values/games-ids.xml in your project.
     <!-- app_id -->
     <string name="app_id" translatable="false">319746399637</string>
     <!-- package_name -->
-    <string name="package_name" translatable="false">com.nightowldevelopers.levelup</string>
     <string name="achievement_level_1" translatable="false">CgkIlbv7kqcJEAIQAg</string>
     <!-- achievement Level 2 -->
     <string name="achievement_level_2" translatable="false">CgkIlbv7kqcJEAIQAw</string>
