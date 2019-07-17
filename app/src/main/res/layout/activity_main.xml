@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout2"
     android:layout_width="match_parent"
-    android:background="#FAE787"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FAE787">
 
     <LinearLayout
         android:id="@+id/screen_sign_in"
@@ -42,29 +42,29 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="32dp"
-            android:layout_marginEnd="44dp"
-            android:layout_marginRight="44dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
             android:fontFamily="@font/sofia"
             android:text="Level Up!"
             app:layout_constraintBottom_toTopOf="@+id/steps"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/button_see_invitations"
-            app:layout_constraintHorizontal_bias="0.745"
+            app:layout_constraintHorizontal_bias="0.632"
             app:layout_constraintStart_toEndOf="@+id/button_invite_players"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.037" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
 
             android:id="@+id/steps"
-            android:layout_width="395dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="88dp"
+            android:layout_width="338dp"
+            android:layout_height="226dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
             android:fontFamily="@font/mate_sc"
+
             android:labelFor="@+id/button_single_player_2"
             android:text="@string/_1_click_on_the_below_download_button_n2_download_the_app_from_playstore_within_seconds_n_3_comeback_and_you_ll_see_a_reward_button_just_tap_it_nthat_s_it_ncongratulation_you_ll_get_1000000_exp_points"
             android:textColor="#023E5A"
@@ -72,10 +72,9 @@
             android:typeface="sans"
             app:layout_constraintBottom_toTopOf="@+id/button_single_player_2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.292"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_invite_players"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <Button
             android:id="@+id/button_single_player_2"
@@ -111,7 +110,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:fontFamily="@font/mate_sc"
@@ -177,7 +176,7 @@
                 android:id="@+id/button_sign_out"
                 android:layout_width="102dp"
                 android:layout_height="49dp"
-                android:layout_marginBottom="64dp"
+                android:layout_marginBottom="80dp"
                 android:background="@color/SignOutButtonTextColor"
                 android:fontFamily="@font/mate_sc"
                 android:text="Signout"
@@ -216,14 +215,14 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.25" />
 
             <Button
                 android:id="@+id/button_instagram"
 
                 android:layout_width="88dp"
                 android:layout_height="88dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="16dp"
                 android:background="@drawable/instagram"
                 android:labelFor="@id/instagramtext"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -257,7 +256,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_begin="20dp" />
+                app:layout_constraintGuide_begin="6dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -280,7 +279,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="20dp" />
+            app:layout_constraintGuide_begin="-16dp" />
 
         <androidx.constraintlayout.widget.Barrier
             android:id="@+id/barrier"

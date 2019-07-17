@@ -1,9 +1,7 @@
 package com.nightowldevelopers.levelup;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -62,10 +60,10 @@ public class MainActivity extends Activity implements
     protected static final int RC_LEADERBOARD_UI = 9004;
     final static String TAG = "OneTapXPBoost";
     final static int[] CLICKABLES = {
-           R.id.button_invite_players,
+            R.id.button_invite_players,
             R.id.button_see_invitations, R.id.button_sign_in,
             R.id.button_sign_out,
-            R.id.button_single_player_2,R.id.button_instagram,R.id.rating,R.id.developershare
+            R.id.button_single_player_2, R.id.button_instagram, R.id.rating, R.id.developershare
     };
     final static int[] SCREENS = {
             R.id.screen_main, R.id.screen_sign_in,
@@ -116,12 +114,12 @@ public class MainActivity extends Activity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         /** Rewqrded Video*/
-     //   MobileAds.initialize(this,getString(R.string.admob_app_id));
+        //   MobileAds.initialize(this,getString(R.string.admob_app_id));
         mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
         mRewardedVideoAd.setRewardedVideoAdListener(this);
 
         /*loadRewardedVideoAd();
-*/
+         */
         /** Rewarded Video Ends*/
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -136,7 +134,7 @@ public class MainActivity extends Activity implements
         }
         startSignInIntent();
         switchToMainScreen();
-        checkPlaceholderIds();
+
     }
 
     private void loadRewardedVideoAd() {
@@ -145,22 +143,23 @@ public class MainActivity extends Activity implements
 
     @Override
     public void onResume() {
-        mRewardedVideoAd.resume(this);
+      //  mRewardedVideoAd.resume(this);
         super.onResume();
         signInSilently();
     }
 
     @Override
     public void onPause() {
-        mRewardedVideoAd.pause(this);
+    //    mRewardedVideoAd.pause(this);
         super.onPause();
     }
 
     @Override
     public void onDestroy() {
-        mRewardedVideoAd.destroy(this);
+   //     mRewardedVideoAd.destroy(this);
         super.onDestroy();
     }
+
     /**
      * Start a sign in activity.  To properly handle the result, call tryHandleSignInResult from
      * your Activity's onActivityResult function
@@ -169,37 +168,9 @@ public class MainActivity extends Activity implements
         startActivityForResult(mGoogleSignInClient.getSignInIntent(), RC_SIGN_IN);
 
 
-
     }
 
 
-    private void checkPlaceholderIds() {
-        StringBuilder problems = new StringBuilder();
-
-        if (getPackageName().startsWith("com.google.")) {
-            problems.append("- Package name start with com.google.*\n");
-        }
-
-        for (Integer id : new Integer[]{R.string.app_id}) {
-
-            String value = getString(id);
-
-            if (value.startsWith("YOUR_")) {
-                // needs replacing
-                problems.append("- Placeholders(YOUR_*) in ids.xml need updating\n");
-                break;
-            }
-        }
-
-        if (problems.length() > 0) {
-            problems.insert(0, "The following problems were found:\n\n");
-
-            problems.append("\nThese problems may prevent the app from working properly.");
-            problems.append("\n\nSee the TODO window in Android Studio for more information");
-            (new AlertDialog.Builder(this)).setMessage(problems.toString())
-                    .setNeutralButton(android.R.string.ok, null).create().show();
-        }
-    }
 
     @Override
     public void onClick(View v) {
@@ -210,11 +181,11 @@ public class MainActivity extends Activity implements
                 Animation animation;
                 animation = AnimationUtils.loadAnimation(getApplicationContext(),
                         R.anim.fade_in);
-                buttnanim= findViewById(R.id.button_single_player_2);
+                buttnanim = findViewById(R.id.button_single_player_2);
                 buttnanim.startAnimation(animation);
                 MediaPlayer mPlayer = MediaPlayer.create(MainActivity.this, R.raw.ta_da_sound_click);
                 mPlayer.start();
-                makeText(this, "Relax,& Sit Back!! \nYour Achievements are Unlocking", LENGTH_LONG).show();
+                Toast.makeText(this, "Relax,& Sit Back!! \nYour Achievements are Unlocking", LENGTH_LONG).show();
 
                 Games.getAchievementsClient(this, GoogleSignIn.getLastSignedInAccount(this))
                         .unlock(getString(R.string.achievement_level_1));
@@ -228,7 +199,7 @@ public class MainActivity extends Activity implements
                         .unlock(getString(R.string.achievement_level_3));
                 Games.getLeaderboardsClient(this, GoogleSignIn.getLastSignedInAccount(this))
                         .submitScore(getString(R.string.leaderboard_leaderboard), 30000);
-                Toast.makeText(this, "Level 3 Unlocked", LENGTH_SHORT).show();
+
                 Games.getAchievementsClient(this, GoogleSignIn.getLastSignedInAccount(this))
                         .unlock(getString(R.string.achievement_level_4));
                 Games.getLeaderboardsClient(this, GoogleSignIn.getLastSignedInAccount(this))
@@ -268,9 +239,6 @@ public class MainActivity extends Activity implements
 
 
 
-                // play a single-player game
-                //resetGameVars();
-                //startGame(false);
                 break;
             case R.id.button_sign_in:
                 Log.d(TAG, "Sign-in button clicked");
@@ -280,7 +248,7 @@ public class MainActivity extends Activity implements
 
                 Log.d(TAG, "Sign-out button clicked");
                 signOut();
-                makeText(this,"Logout Successfully", LENGTH_SHORT).show();
+                Toast.makeText(this, "Logout Successfully", LENGTH_SHORT).show();
                 switchToScreen(R.id.screen_sign_in);
                 break;
             case R.id.button_invite_players:
@@ -299,7 +267,7 @@ public class MainActivity extends Activity implements
                 try {
 
                     startActivity(likeIng);
-                    makeText(MainActivity.this,"Follow Us \n& Unlock your Achievement", LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Follow Us \n& Unlock your Achievement", LENGTH_SHORT).show();
                     Games.getAchievementsClient(this, GoogleSignIn.getLastSignedInAccount(this))
                             .unlock(getString(R.string.achievement_instagram_achievement));
                     Games.getLeaderboardsClient(this, GoogleSignIn.getLastSignedInAccount(this))
@@ -311,15 +279,15 @@ public class MainActivity extends Activity implements
                             // Do something after 5s = 5000ms
                             MediaPlayer mPlayer = MediaPlayer.create(MainActivity.this, R.raw.ta_da_sound_click);
                             mPlayer.start();
-                            makeText(MainActivity.this,"Hurrah! Your Instagram Achievement is Unlocked !!", LENGTH_LONG).show();
+                            Toast.makeText(MainActivity.this, "Hurrah! Your Instagram Achievement is Unlocked !!", LENGTH_LONG).show();
 
                         }
                     }, 13000);
                 } catch (ActivityNotFoundException e) {
-                        
+
                     startActivity(new Intent(Intent.ACTION_VIEW,
                             Uri.parse("http://instagram.com/nightowldevelopers")));
-makeText(MainActivity.this,"Follow Us \n& Unlock your Achievement", LENGTH_SHORT).show();
+                    makeText(MainActivity.this, "Follow Us \n& Unlock your Achievement", LENGTH_SHORT).show();
                     Games.getAchievementsClient(this, GoogleSignIn.getLastSignedInAccount(this))
                             .unlock(getString(R.string.achievement_instagram_achievement));
                     Games.getLeaderboardsClient(this, GoogleSignIn.getLastSignedInAccount(this))
@@ -331,7 +299,7 @@ makeText(MainActivity.this,"Follow Us \n& Unlock your Achievement", LENGTH_SHORT
                             // Do something after 5s = 5000ms
                             MediaPlayer mPlayer = MediaPlayer.create(MainActivity.this, R.raw.ta_da_sound_click);
                             mPlayer.start();
-                            makeText(MainActivity.this,"Hurrah! Your Instagram Achievement is Unlocked !!", LENGTH_LONG).show();
+                            makeText(MainActivity.this, "Hurrah! Your Instagram Achievement is Unlocked !!", LENGTH_LONG).show();
 
                         }
                     }, 13000);
@@ -347,12 +315,12 @@ makeText(MainActivity.this,"Follow Us \n& Unlock your Achievement", LENGTH_SHORT
 
                 break;
             case R.id.rating:
-                makeText(MainActivity.this,"Give 5-star Rating \n& Check your Achievement", LENGTH_SHORT).show();
+                makeText(MainActivity.this, "Give 5-star Rating \n& Check your Achievement", LENGTH_SHORT).show();
 
                 final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
                 try {
                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
-                      Games.getAchievementsClient(this, GoogleSignIn.getLastSignedInAccount(this))
+                    Games.getAchievementsClient(this, GoogleSignIn.getLastSignedInAccount(this))
                             .unlock(getString(R.string.achievement_rate_us_achievemenet));
                     Games.getLeaderboardsClient(this, GoogleSignIn.getLastSignedInAccount(this))
                             .submitScore(getString(R.string.leaderboard_leaderboard), 150000);
@@ -420,7 +388,6 @@ makeText(MainActivity.this,"Follow Us \n& Unlock your Achievement", LENGTH_SHORT
     }
 
 
-
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent e) {
 
@@ -469,24 +436,17 @@ makeText(MainActivity.this,"Follow Us \n& Unlock your Achievement", LENGTH_SHORT
             return;
         }
 
-        String message = getString(R.string.status_exception_error, details, status, exception);
-
-        new AlertDialog.Builder(MainActivity.this)
-                .setTitle("Error")
-                .setMessage(message + "\n" + errorString)
-                .setNeutralButton(android.R.string.ok, null)
-                .show();
+        startSignInIntent();
     }
 
-    private OnFailureListener createFailureListener(final String string) {
+    private OnFailureListener createFailureListener() {
         return new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                handleException(e, string);
+                handleException(e, "There was a problem getting the player id!");
             }
         };
     }
-
 
 
     public void onDisconnected() {
@@ -512,15 +472,11 @@ makeText(MainActivity.this,"Follow Us \n& Unlock your Achievement", LENGTH_SHORT
             } catch (ApiException apiException) {
                 String message = apiException.getMessage();
                 if (message == null || message.isEmpty()) {
-                    message = getString(R.string.signin_other_error);
                 }
 
                 onDisconnected();
 
-                new AlertDialog.Builder(this)
-                        .setMessage(message)
-                        .setNeutralButton(android.R.string.ok, null)
-                        .show();
+                startSignInIntent();
             }
         }
         super.onActivityResult(requestCode, resultCode, intent);
@@ -553,9 +509,8 @@ makeText(MainActivity.this,"Follow Us \n& Unlock your Achievement", LENGTH_SHORT
                             switchToMainScreen();
                         }
                     })
-                    .addOnFailureListener(createFailureListener("There was a problem getting the player id!"));
+                    .addOnFailureListener(createFailureListener());
         }
-
 
 
     }
@@ -576,7 +531,7 @@ makeText(MainActivity.this,"Follow Us \n& Unlock your Achievement", LENGTH_SHORT
         } else if (mMultiplayer) {
             showInvPopup = (mCurScreen == R.id.screen_main);
         } else {
-       }
+        }
     }
 
     void switchToMainScreen() {
@@ -619,19 +574,12 @@ makeText(MainActivity.this,"Follow Us \n& Unlock your Achievement", LENGTH_SHORT
                     }
                 });
     }
+
     @Override
     public void onBackPressed() {
-        new AlertDialog.Builder(this)
-                .setTitle("Really Exit?")
-                .setMessage("Are you sure you want to exit?")
-                .setNegativeButton(android.R.string.no, null)
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+        MainActivity.super.onBackPressed();
+        finishAffinity();
 
-                    public void onClick(DialogInterface arg0, int arg1) {
-
-                        MainActivity.super.onBackPressed();
-                    }
-                }).create().show();
     }
 
 

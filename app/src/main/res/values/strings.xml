@@ -30,7 +30,7 @@
     <string name="unexpected_status">Unexpected status: %1$s</string>
     <string name="match_error_inactive_match">This match is inactive.</string>
     <string name='match_error_locally_modified'>This match has locally-modified data.  This operation cannot be performed until the match is sent to the server.</string>
-    <string name="_1_click_on_the_below_download_button_n2_download_the_app_from_playstore_within_seconds_n_3_comeback_and_you_ll_see_a_reward_button_just_tap_it_nthat_s_it_ncongratulation_you_ll_get_1000000_exp_points">STEPS:\n1. Click on the Start Button. You\'ll get<b> 80000 Exp Points !!</b>\n2. Follow on Instagram after that You\'ll get <b>Reward of 10k xp Points.</b>\n3. Rate us 5 star on Playstore and You\'ll Reward additional 10k xp Points<b> Congratulation</b>\nYou won<b> 100000 Exp Points !!</b></string>
+    <string name="_1_click_on_the_below_download_button_n2_download_the_app_from_playstore_within_seconds_n_3_comeback_and_you_ll_see_a_reward_button_just_tap_it_nthat_s_it_ncongratulation_you_ll_get_1000000_exp_points">STEPS:\n1. Click on the Start Button. You\'ll get<b> 80k Exp Points !!</b>\n2. Follow on Instagram after that You\'ll get <b>Reward of 10k xp Points.</b>\n3. Rate us 5 star on Playstore and You\'ll Reward additional 10k xp Points<b> Congratulation</b>\nYou won<b> 100000 Exp Points !!</b></string>
 
     <string name="vdo_ad_unit_id">ca-app-pub-3940256099942544/5224354917</string>
 </resources>
