@@ -1,58 +1,50 @@
 {
   "project_info": {
-    "project_number": "53286765302",
-    "firebase_url": "https://one-tap-xp-boost-66405108.firebaseio.com",
-    "project_id": "one-tap-xp-boost-66405108",
-    "storage_bucket": "one-tap-xp-boost-66405108.appspot.com"
+    "project_number": "319746399637",
+    "firebase_url": "https://level-up-4120462.firebaseio.com",
+    "project_id": "level-up-4120462",
+    "storage_bucket": "level-up-4120462.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:53286765302:android:408758893fe2b39e",
+        "mobilesdk_app_id": "1:319746399637:android:b29c354725a7e56b",
         "android_client_info": {
           "package_name": "com.nightowldevelopers.levelup"
         }
       },
       "oauth_client": [
         {
-          "client_id": "53286765302-sho24pjgptdd7js7s8iesp6ku68uu2uk.apps.googleusercontent.com",
+          "client_id": "319746399637-jrs2bu5mtgsa46jmr9rcrih4gthkvg8v.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.nightowldevelopers.levelup",
-            "certificate_hash": "4626e15cdf4f5a242513658ec2fb905b03c8aeaa"
+            "certificate_hash": "58424372806834dae8228e459fd4dd1269a2fee2"
           }
         },
         {
-          "client_id": "53286765302-40teqkfb6dhb9npdq1v4pmvjl24edtlg.apps.googleusercontent.com",
+          "client_id": "319746399637-qdk7af593usu69arv7e6iionpsf0dird.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.nightowldevelopers.levelup",
-            "certificate_hash": "bc33aa2ded7c9da604de004707b2fb447c83f5a8"
+            "certificate_hash": "cdd0306b28c70f7adb55d5aea09f2882d9d6e04c"
           }
         },
         {
-          "client_id": "53286765302-3t73cprc3bb98afuokfdjlc4crsja8o6.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.nightowldevelopers.levelup",
-            "certificate_hash": "6839980a69d2669314f895a76c73cc7389c586ee"
-          }
-        },
-        {
-          "client_id": "53286765302-55cf2p57vrsafncbsef9gll9csr8v3mk.apps.googleusercontent.com",
+          "client_id": "319746399637-kjpleam2tm1n51imn4q43fhca66v0jj3.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDU6GZBHFnSTEcJ0yhMLx1E07qQ2cOrvAE"
+          "current_key": "AIzaSyCyyoV4m3jJRO_bQj4Svea1s8OCeKJvtl8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "53286765302-55cf2p57vrsafncbsef9gll9csr8v3mk.apps.googleusercontent.com",
+              "client_id": "319746399637-kjpleam2tm1n51imn4q43fhca66v0jj3.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
