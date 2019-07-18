@@ -268,7 +268,7 @@
             android:layout_centerHorizontal="true"
 
             ads:adSize="BANNER"
-            ads:adUnitId="ca-app-pub-9659269658536774/6742499649"
+            ads:adUnitId="ca-app-pub-6425347832770094/8475798427"
             ads:layout_constraintBottom_toBottomOf="parent"
             ads:layout_constraintEnd_toEndOf="parent"
             ads:layout_constraintHorizontal_bias="0.824"
